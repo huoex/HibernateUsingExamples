@@ -1,26 +1,23 @@
-package ua.anakin.model_08_inheritance;
-
+package ua.anakin.model_11_IdClass;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class MainFor08 {
+public class MainFor11 {
 
     public static void main(String[] args) {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setVehicleName("Transport");
+    	IdClassExampleDepartment idClassExampleDepartment = new IdClassExampleDepartment();
+    	idClassExampleDepartment.setDepartmentId(3L);
+    	idClassExampleDepartment.setName("san.bu");
 
-        Motorbike motorbike = new Motorbike();
-        motorbike.setVehicleName("Honda");
-        motorbike.setBikeType("Race");
+    	IdClassExampleEmployee idClassExampleEmployee = new IdClassExampleEmployee();
+    	idClassExampleEmployee.setEmpId(20070591L);
+    	idClassExampleEmployee.setDepartment(idClassExampleDepartment);
 
-        Car car = new Car();
-        car.setVehicleName("Explorer");
-        car.setSeaterNumber(8);
-
+    	
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
 
@@ -31,9 +28,7 @@ public class MainFor08 {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        session.save(vehicle);
-        session.save(motorbike);
-        session.save(car);
+        session.save(idClassExampleEmployee);
 
         // Hibernate by default implement Single Table Inheritance Strategy
         // That's mean all rows of subclasses will be in one common table

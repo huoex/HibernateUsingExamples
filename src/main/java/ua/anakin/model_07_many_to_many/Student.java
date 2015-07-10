@@ -12,6 +12,7 @@ public class Student {
     private int studentId;
     private String StudentName;
     @ManyToMany
+    (cascade = CascadeType.ALL)
     private Collection<Course> courses = new ArrayList<Course>();
 
     public int getStudentId() {

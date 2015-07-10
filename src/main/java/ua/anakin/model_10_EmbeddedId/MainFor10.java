@@ -1,26 +1,24 @@
-package ua.anakin.model_08_inheritance;
-
+package ua.anakin.model_10_EmbeddedId;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class MainFor08 {
+public class MainFor10 {
 
     public static void main(String[] args) {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setVehicleName("Transport");
+    	EmbeddedIdExampleDepartment embeddedIdExampleDepartment = new EmbeddedIdExampleDepartment();
+    	embeddedIdExampleDepartment.setDepartmentId(3L);
+    	embeddedIdExampleDepartment.setName("san.bu");
+    	
+    	EmbeddedIdExampleEmployeePK embeddedIdExampleEmployeePK = new EmbeddedIdExampleEmployeePK(20070591L,3L);
 
-        Motorbike motorbike = new Motorbike();
-        motorbike.setVehicleName("Honda");
-        motorbike.setBikeType("Race");
-
-        Car car = new Car();
-        car.setVehicleName("Explorer");
-        car.setSeaterNumber(8);
-
+    	EmbeddedIdExampleEmployee embeddedIdExampleEmployee = new EmbeddedIdExampleEmployee();
+    	embeddedIdExampleEmployee.setEmployeePk(embeddedIdExampleEmployeePK);
+    	embeddedIdExampleEmployee.setDepartment(embeddedIdExampleDepartment);
+    	
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
 
@@ -31,9 +29,7 @@ public class MainFor08 {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        session.save(vehicle);
-        session.save(motorbike);
-        session.save(car);
+        session.save(embeddedIdExampleEmployee);
 
         // Hibernate by default implement Single Table Inheritance Strategy
         // That's mean all rows of subclasses will be in one common table

@@ -6,33 +6,44 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/redcatdb</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">0674033375</property>
+        <property name="connection.password">admin</property>
 
         <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
         <!--be sure that classes what you need is not commented-->
-        <!--<mapping class="ua.anakin.model_01_example.User"/>
-        <mapping class="ua.anakin.model_01_example.Student"/>
-        <mapping class="ua.anakin.model_02_compound_key.Person"/>-->
-        <!--<mapping class="ua.anakin.model_03_collections.PersonAccount"/>-->
-        <!--<mapping class="ua.anakin.model_04.PersonAccount"/>-->
+        <!-- <mapping class="ua.anakin.model_01_example.User"/>
+        <mapping class="ua.anakin.model_01_example.Student"/> -->
+        <!-- <mapping class="ua.anakin.model_02_compound_key.Person"/> -->
+        <!-- <mapping class="ua.anakin.model_03_collections.PersonAccount"/> -->
+        <!-- <mapping class="ua.anakin.model_04.PersonAccount"/> -->
 
-        <!--<mapping class="ua.anakin.model_05.Person"/>
+        <!-- <mapping class="ua.anakin.model_05.Person"/>
         <mapping class="ua.anakin.model_05.Vehicle"/>
-        <mapping class="ua.anakin.model_05.PersonDetails"/>-->
+        <mapping class="ua.anakin.model_05.PersonDetails"/> -->
 
-        <!--<mapping class="ua.anakin.model_06_mapped_by.Person"/>
+        <!-- <mapping class="ua.anakin.model_06_mapped_by.Person"/>
         <mapping class="ua.anakin.model_06_mapped_by.Vehicle"/>
-        <mapping class="ua.anakin.model_06_mapped_by.PersonDetails"/>-->
+        <mapping class="ua.anakin.model_06_mapped_by.PersonDetails"/> -->
 
-        <!--<mapping class="ua.anakin.model_07_many_to_many.Student"/>
-        <mapping class="ua.anakin.model_07_many_to_many.Course"/>-->
+        <!-- <mapping class="ua.anakin.model_07_many_to_many.Student"/>
+        <mapping class="ua.anakin.model_07_many_to_many.Course"/> -->
 
-        <mapping class="ua.anakin.model_08_inheritance.Vehicle"/>
+        <!-- <mapping class="ua.anakin.model_08_inheritance.Vehicle"/>
         <mapping class="ua.anakin.model_08_inheritance.Motorbike"/>
-        <mapping class="ua.anakin.model_08_inheritance.Car"/>
+        <mapping class="ua.anakin.model_08_inheritance.Car"/> -->
+        
+        <!-- <mapping class="ua.anakin.model_09_SampleEntity.SampleEntity"/>
+        <mapping class="ua.anakin.model_09_SampleEntity.SampleEntityPK"/> -->
+        
+        <!-- <mapping class="ua.anakin.model_10_EmbeddedId.EmbeddedIdExampleDepartment"/>
+        <mapping class="ua.anakin.model_10_EmbeddedId.EmbeddedIdExampleEmployee"/>
+        <mapping class="ua.anakin.model_10_EmbeddedId.EmbeddedIdExampleEmployeePK"/> -->
+        
+        <mapping class="ua.anakin.model_11_IdClass.IdClassExampleDepartment"/>
+        <mapping class="ua.anakin.model_11_IdClass.IdClassExampleEmployee"/>
+        <mapping class="ua.anakin.model_11_IdClass.IdClassExampleEmployeePK"/>
 
     </session-factory>
 </hibernate-configuration>

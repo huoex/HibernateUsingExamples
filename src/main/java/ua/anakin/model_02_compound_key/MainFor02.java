@@ -1,8 +1,16 @@
 package ua.anakin.model_02_compound_key;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+
+import ua.anakin.model_01_example.Address;
+
 public class MainFor02 {
 
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Passport passport = new Passport();
         passport.setPassportSeries("AA");
@@ -48,5 +56,5 @@ public class MainFor02 {
         System.out.println(person);
 
         factory.close();
-    }*/
+    }
 }

@@ -1,25 +1,15 @@
-package ua.anakin.model_08_inheritance;
-
+package ua.anakin.model_09_SampleEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class MainFor08 {
+public class MainFor09 {
 
     public static void main(String[] args) {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setVehicleName("Transport");
-
-        Motorbike motorbike = new Motorbike();
-        motorbike.setVehicleName("Honda");
-        motorbike.setBikeType("Race");
-
-        Car car = new Car();
-        car.setVehicleName("Explorer");
-        car.setSeaterNumber(8);
+    	SampleEntity sampleEntity = new SampleEntity("zhang","san");
 
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
@@ -31,9 +21,7 @@ public class MainFor08 {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        session.save(vehicle);
-        session.save(motorbike);
-        session.save(car);
+        session.save(sampleEntity);
 
         // Hibernate by default implement Single Table Inheritance Strategy
         // That's mean all rows of subclasses will be in one common table
